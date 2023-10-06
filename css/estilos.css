@@ -40,7 +40,7 @@ form {
     justify-content: center;
 }
 #form-datos {
-    width: 630px;
+    max-width: 790px;
 }
 #form-ABM {
     width: 570px;
@@ -110,9 +110,11 @@ select {
 
 fieldset {
     width: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-top: 42px;
     border-color: rgb(71, 98, 172);
     border-radius: 10px;
+    max-width: 500px;
 }
 fieldset > input {
     display: inline;
