@@ -1,0 +1,212 @@
+body {
+    background-color: rgb(31, 32, 39);
+    color: aliceblue;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+    text-align: center;
+    margin: 0 100px 5px 100px;
+}
+
+.contenedor-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 3px 10px 0px 10px;
+    padding: 20px 20px 0px 20px;
+    align-items: center;
+    border: solid 2px rgb(71, 98, 172);
+    border-radius: 10px;
+    width: 90%;
+}
+#seccion-ABM {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px rgb(71, 98, 172);
+    border-radius: 10px;
+    width: 70%;
+    margin: 0px 2px 18px 2px;
+    padding: 16px;
+    justify-content: center;
+}
+#form-datos {
+    width: 630px;
+}
+#form-ABM {
+    width: 570px;
+}
+.linea {
+    margin: 0px 17px 0px 17px;
+}
+#promedio {
+    height: 25px;
+    width: 150px;
+}
+
+table {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: rgb(31, 32, 39);
+    color: white;
+    padding: 5px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 16px;
+}
+th {
+    font-size: 18px;
+    text-transform: capitalize;
+    border: solid 2px rgb(71, 98, 172);
+    border-collapse: collapse;
+    padding: 7px 10px 7px 10px;
+}
+td {
+    padding: 9px;
+    border: solid 2px rgb(71, 98, 172);
+    border-collapse: collapse;
+    text-align: center;
+}
+.filaPar {
+    background-color: rgb(34, 36, 43);
+}
+.filaSeleccionada, tbody > tr:hover {
+    background-color: rgb(71, 98, 172);
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+input {
+    margin-bottom: 7px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(31, 32, 39);
+    border: solid 2px rgb(71, 98, 172);
+    border-radius: 4px;
+    padding: 3px;
+}
+select {
+    width: 150px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(31, 32, 39);
+    border: solid 2px rgb(71, 98, 172);
+    border-radius: 4px;
+    padding: 3px;
+}
+
+fieldset {
+    width: fit-content;
+    margin-bottom: 20px;
+    border-color: rgb(71, 98, 172);
+    border-radius: 10px;
+}
+fieldset > input {
+    display: inline;
+}
+legend {
+    font-weight: bold;
+}
+
+button {
+    color: white;
+    background-color: rgb(31, 32, 39);
+    border: solid 2px rgb(71, 98, 172);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    margin-top: 6px;
+}
+[type="button"]:hover {
+    cursor: pointer;
+    background-color: rgb(71, 98, 172);
+    color: white;
+    transition-duration: 300ms;
+}
+#botonABM {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    width: 200px;
+    margin-top: 20px;
+}
+#botonABM:hover {
+    cursor: pointer;
+    background-color: rgb(71, 98, 172);
+    color: white;
+    transition-duration: 300ms;
+}
+
+input[type="submit"] {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px;
+    color: rgb(39, 158, 28);
+    border-color: rgb(39, 158, 28);
+    border-radius: 10px;
+    margin-top:5%;
+    max-height: 60px;
+    width: 160px;
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(39, 158, 28);
+    color: white;
+    transition-duration: 300ms;
+}
+#inputBaja {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px;
+    color: rgb(185, 71, 43);
+    border-color: rgb(185, 71, 43);
+    border-radius: 10px;
+    margin-left: 20px;
+    width: 160px;
+}
+#inputBaja:hover {
+    cursor: pointer;
+    background-color: rgb(185, 71, 43);
+    color: white;
+}
+#botonCancelar {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px;
+    color: white;
+    border-color: rgb(71, 98, 172);
+    border-radius: 10px;
+    margin-left: 20px;
+    width: 160px;
+}
+#botonCancelar:hover {
+    cursor: pointer;
+    background-color: rgb(71, 98, 172);
+    color: white;
+}
+
+#tipo {
+    margin-bottom: 6px;
+}
+#inputAereo {
+    margin: 0px 0px 0px 0px;
+}
+#inputTerrestre {
+    margin: 0px 0px 0px 0px;
+    display: none;
+}

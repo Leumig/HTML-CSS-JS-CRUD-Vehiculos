@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primer Parcial</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <script type="module" src="./js/funcionalidad/logica.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Aplicación</h1>
+      </header>
+      <main class="contenedor-flex">
+        <section id="seccion-datos">
+          <form id="form-datos">
+            <div class="linea">
+              <label for="filtro">Filtrar por:</label>
+              <select name="selFiltro" id="filtro">
+                <option value="Todos">Todos</option>
+                <option value="Aereo">Aereo</option>
+                <option value="Terrestre">Terrestre</option>
+              </select>
+              <label for="promedio">Promedio Velocidad Máxima</label>
+              <input
+                type="text"
+                name="txtPromedio"
+                id="promedio"
+                autocomplete="off"
+                disabled
+              />
+              <button class="botonStandard" type="button" id="calcular">
+                Calcular
+              </button>
+            </div>
+
+            <div class="linea">
+              <fieldset id="contenedor-checkbox">
+                <legend>Mostrar Columnas</legend>
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="id"
+                  id="chkID"
+                  checked
+                />ID
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="modelo"
+                  id="chkModelo"
+                  checked
+                />Modelo
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="anoFab"
+                  id="chkAnoFab"
+                  checked
+                />Año Fab.
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="velMax"
+                  id="chkVelMax"
+                  checked
+                />Vel. Max. <br />
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="altMax"
+                  id="chkAltMax"
+                  checked
+                />Alt. Max.
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="autonomia"
+                  id="chkAutonomia"
+                  checked
+                />Autonomia
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="cantPue"
+                  id="chkCantPue"
+                  checked
+                />Cant. Pue.
+                <input
+                  type="checkbox"
+                  class="chkColumna"
+                  name="cantRue"
+                  id="chkCantRue"
+                  checked
+                />Cant. Rue.
+              </fieldset>
+            </div>
+            <button type="button" id="botonABM">
+              AGREGAR
+            </button>
+          </form>
+          <div id="tabla-contenedor"></div>
+        </section>
+
+        <section id="seccion-ABM">
+          <form id="form-ABM">
+            <div class="linea">
+              <label id="idLabel" for="id">ID</label>
+              <input
+                type="text"
+                name="txtId"
+                id="id"
+                autocomplete="off"
+                disabled
+                required
+              />
+              <label for="modelo">Modelo</label>
+              <input
+                type="text"
+                name="txtModelo"
+                id="modelo"
+                autocomplete="off"
+                required
+              />
+              <label for="anoFab">Año Fab.</label>
+              <input
+                type="number"
+                name="numAnoFab"
+                id="anoFab"
+                min="1885"
+                max="3000"
+                value="1885"
+                required
+              />
+              <label for="velMax">Vel. Max.</label>
+              <input
+                type="number"
+                name="numVelMax"
+                id="velMax"
+                min="1"
+                max="9999"
+                value="1"
+                required
+              />
+            </div>
+
+            <div class="linea">
+              <div id="selectTipo">
+                <label for="tipo">Tipo:</label>
+                <select name="selTipo" id="tipo">
+                  <option value="Aereo">Aereo</option>
+                  <option value="Terrestre">Terrestre</option>
+                </select>
+              </div>
+              
+              <div id="inputAereo" class="linea">
+                <label for="altMax">Alt. Max.</label>
+                <input
+                  type="number"
+                  name="numAltMax"
+                  id="altMax"
+                  min="1"
+                  max="9999"
+                  value="1"
+                  autocomplete="off"
+                />
+                <label for="autonomia">Autonomia</label>
+                <input
+                  type="number"
+                  name="numAutonomia"
+                  id="autonomia"
+                  min="1"
+                  max="9999"
+                  value="1"
+                />
+               </div>
+
+              <div id="inputTerrestre" class="linea"> 
+                <label for="cantPue">Cant. Pue.</label> 
+                <input
+                  type="number"
+                  name="numCantPue"
+                  id="cantPue"
+                  min="0"
+                  max="12"
+                  value="0"
+                />
+                <label for="cantRue">Cant. Rue.</label>
+                <input
+                  type="number"
+                  name="numCantRue"
+                  id="cantRue"
+                  min="1"
+                  max="12"
+                  value="1"
+                />
+              </div>
+            </div>
+            
+            <div class="linea">
+              <input type="submit" value="Agregar" id="inputSubmit" />
+              <input type="hidden" value="Eliminar" id="inputBaja" />
+              <button type="button" id="botonCancelar">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </main>
+  </body>
+</html>
