@@ -322,7 +322,6 @@ contenedorTabla.addEventListener("click", e => {
 
         document.querySelectorAll("th.columnaOrdenada").forEach(e => e.classList.remove("columnaOrdenada"));
 
-        // ordenarDatos("id");
         ordenarDatos(columna);
         actualizarTablaFiltrada($divTablaContenedor, $selectFiltro.value, getColumnasOcultas(), e.target);
     }
