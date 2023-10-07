@@ -1,5 +1,4 @@
 import { vehiculos as vehiculosImportados } from "./vehiculos.js";
-import { Vehiculo } from "../clases/vehiculo.js"
 import { Aereo } from "../clases/aereo.js"
 import { Terrestre } from "../clases/terrestre.js"
 import { actualizarTabla } from "./tabla.js";
@@ -19,8 +18,6 @@ let terrestres = vehiculos.map(v => "cantPue" in v ? new Terrestre(v["id"], v["m
 /////   ESTABLECER FILTRO (SELECT)   /////////////////////////////////////////////////////////////////
 $selectFiltro.addEventListener("change", () => {
     const filtro = $selectFiltro.value;
-
-    console.log(`Seleccionaste: ${filtro}`);
 
     actualizarTablaFiltrada($divTablaContenedor, filtro, getColumnasOcultas());
 });
@@ -45,7 +42,6 @@ function getColumnasOcultas() {
        }
     });
 
-    console.log(columnasOcultas);
     return columnasOcultas;
 }
 
@@ -111,22 +107,22 @@ const $inputBaja = document.getElementById("inputBaja");
 const $inputSubmit = document.getElementById("inputSubmit");
 
 $botonABM.addEventListener("click", () => {
-    intercambiarFormularios(); //Cuando abro el form ABM, oculto el de datos
+    intercambiarFormularios();
 
-    $formABM.reset(); //Vacío todas las inputs (incluye al select)
-    intercambiarInputs(); //Pongo las inputs que corresponden en base al select
+    $formABM.reset();
+    intercambiarInputs();
 
-    $inputSubmit.value = "Agregar"; //El input submit se llama Agregar
-    $inputBaja.setAttribute("type", "hidden"); //Oculto el boton de baja
+    $inputSubmit.value = "Agregar";
+    $inputBaja.setAttribute("type", "hidden");
 
-    $inputId.style.setProperty("display", "none"); //Oculto el input ID
-    $labelId.style.setProperty("display", "none"); //Oculto el label ID
+    $inputId.style.setProperty("display", "none");
+    $labelId.style.setProperty("display", "none");
 
-    $selectTipo.removeAttribute("disabled"); //Hago que el select se pueda usar
+    $selectTipo.removeAttribute("disabled");
 });
 
 $botonCancelar.addEventListener("click", () => {
-    intercambiarFormularios(); //Si cancelo, vuelvo al otro formulario
+    intercambiarFormularios();
 });
 
 function intercambiarFormularios() {
@@ -189,33 +185,31 @@ window.addEventListener("dblclick", (e) => {
    }
 });
 
-function cargarFormABM(vehiculo) {
-   console.log(vehiculo);
-   
+function cargarFormABM(vehiculo) {   
    txtId.value = vehiculo.id;
    txtModelo.value = vehiculo.modelo;
    numAnoFab.value = vehiculo.anoFab;
    numVelMax.value = vehiculo.velMax;
 
-   $selectTipo.setAttribute("disabled", "true"); //Que no se pueda cambiar tipo
+   $selectTipo.setAttribute("disabled", "true");
 
-   $labelId.style.setProperty("display", "block"); //Que se muestre el ID
-   $inputId.style.setProperty("display", "block"); //Que el ID no se pueda modificar
+   $labelId.style.setProperty("display", "block");
+   $inputId.style.setProperty("display", "block");
 
    if ("altMax" in vehiculo) {
        numAltMax.value = vehiculo.altMax;
        numAutonomia.value = vehiculo.autonomia;
-       $selectTipo.value = "Aereo"; //Pongo el filtro en 'Aereo'
+       $selectTipo.value = "Aereo";
 
-       $inputsTerrestre.style.setProperty("display", "none"); //Oculto las input 'Terrestre'
-       $inputsAereo.style.setProperty("display", "block"); //Muestro las input 'Aereo'
+       $inputsTerrestre.style.setProperty("display", "none");
+       $inputsAereo.style.setProperty("display", "block");
    } else {
        numCantPue.value = vehiculo.cantPue;
        numCantRue.value = vehiculo.cantRue;
-       $selectTipo.value = "Terrestre"; //Pongo el filtro en 'Terrestre'
+       $selectTipo.value = "Terrestre";
 
-       $inputsAereo.style.setProperty("display", "none"); //Oculto las input 'Aereo'
-       $inputsTerrestre.style.setProperty("display", "block"); //Muestro las input 'Terrestre'
+       $inputsAereo.style.setProperty("display", "none");
+       $inputsTerrestre.style.setProperty("display", "block");
    }
 }
 
@@ -228,7 +222,7 @@ $formABM.addEventListener("submit", (e) => {
             parseInt(numAltMax.value), parseInt(numAutonomia.value),
             parseInt(numCantPue.value), parseInt(numCantRue.value), $selectTipo.value)
 
-        if (txtId.value === "") { //Si no hay valor de ID, es una persona nueva (ALTA)
+        if (txtId.value === "") {
     
             if ($selectTipo.value === "Aereo") {
                 const aereoNuevo = new Aereo(
@@ -257,12 +251,8 @@ $formABM.addEventListener("submit", (e) => {
             }
 
             actualizarTablaFiltrada($divTablaContenedor, $selectFiltro.value, getColumnasOcultas());
-    
-        } else { //Si hay valor de ID, es una modificación
-    
-            console.log("Vehículo existente");
-    
-            if ($selectTipo.value === "Aereos") {
+        } else {
+            if ($selectTipo.value === "Aereo") {
                 const aereoNuevo = new Aereo(
                     txtId.value,
                     txtModelo.value,
@@ -306,31 +296,17 @@ $formABM.addEventListener("submit", (e) => {
 /////   ABM BOTÓN ELIMINAR   ///////////////////////////////////////////////////////////////////////
 $inputBaja.addEventListener("click", () => {
     if (window.confirm("¿Seguro de eliminar este vehículo?")) {
-        let id = txtId.value; //Tomo el ID escrita
-        let index = vehiculos.findIndex((v) => v.id == id); //Busco el índice en el array
-        vehiculos.splice(index, 1); //Elimino el elemento por su índice
-        
-        console.log("ID leída:");
-        console.log(id);
+        let id = txtId.value;
+        let index = vehiculos.findIndex((v) => v.id == id);
+        vehiculos.splice(index, 1);
 
-        console.log("vehiculos:");
-        console.log(vehiculos);
-
-        if ($selectTipo.value === "Aereo") { //Si era de este tipo, también lo elimino
+        if ($selectTipo.value === "Aereo") {
             index = aereos.findIndex((a) => a.id == id);
             aereos.splice(index, 1);
-            console.log("Entre aca porque el selecTipo es aereos");
-        } else { //Si era de este tipo, también lo elimino
+        } else {
             index = terrestres.findIndex((t) => t.id == id);
             terrestres.splice(index, 1);
-            console.log("Entre aca porque el selecTipo es terrestres");
         }
-
-        console.log("aereos:");
-        console.log(aereos);
-
-        console.log("terrestres:");
-        console.log(terrestres);
 
         actualizarTablaFiltrada($divTablaContenedor, $selectFiltro.value, getColumnasOcultas());
         intercambiarFormularios();
@@ -343,11 +319,10 @@ let contenedorTabla = document.getElementById("tabla-contenedor");
 contenedorTabla.addEventListener("click", e => {
     if (e.target.matches("th")) {
         let columna = e.target.textContent;
-        console.log(e.target);
 
         document.querySelectorAll("th.columnaOrdenada").forEach(e => e.classList.remove("columnaOrdenada"));
 
-        ordenarDatos("id"); //Necesito ordenarlo primero por ID para evitar el bug
+        ordenarDatos("id");
         ordenarDatos(columna);
         actualizarTablaFiltrada($divTablaContenedor, $selectFiltro.value, getColumnasOcultas(), e.target);
     }
@@ -363,6 +338,12 @@ function ordenarDatos(columna) {
         case "cantPue":
         case "cantRue":
             vehiculos.sort((a, b) => {
+                return a[columna] - b[columna];
+            });
+            aereos.sort((a, b) => {
+                return a[columna] - b[columna];
+            });
+            terrestres.sort((a, b) => {
                 return a[columna] - b[columna];
             });
             break;
