@@ -177,13 +177,10 @@ const { txtId, txtModelo, numAnoFab, numVelMax,
 
 window.addEventListener("dblclick", (e) => {
     if (e.target.matches("td")) {
-       console.log("Hiciste doble click en un td.");
        const id = e.target.parentElement.getAttribute("data-id");
-       console.log(id);
 
        const vehiculoSeleccionado = vehiculos.find((v) => v.id == id);
 
-       console.log(vehiculoSeleccionado);
        cargarFormABM(vehiculoSeleccionado);
        intercambiarFormularios();
 
@@ -232,7 +229,6 @@ $formABM.addEventListener("submit", (e) => {
             parseInt(numCantPue.value), parseInt(numCantRue.value), $selectTipo.value)
 
         if (txtId.value === "") { //Si no hay valor de ID, es una persona nueva (ALTA)
-            console.log("Vehículo nuevo");
     
             if ($selectTipo.value === "Aereo") {
                 const aereoNuevo = new Aereo(

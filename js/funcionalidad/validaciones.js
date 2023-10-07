@@ -4,7 +4,7 @@ function validarCadena(cadena, longitudMaxima) {
     if (typeof cadena === "string") {
         cadena = cadena.trim();
     
-        const regex = /^[A-Za-záéíóúüñÁÉÍÓÚÜÑ\s'.-]+$/;
+        const regex = /^[0-9A-Za-záéíóúüñÁÉÍÓÚÜÑ\s'.-]+$/;
         
         validacion = cadena.length > 1 && cadena.length <= longitudMaxima && regex.test(cadena);
     }
@@ -26,15 +26,15 @@ export function validarEntidad(v1, v2, v3, v4, v5, v6, v7, tipo) {
     if (!validarNumero(v2, 1885, 3000)) errores.push("Año Fab.");
 
     // v3 es Vel. Max.
-    if (!validarNumero(v3, 1, 9999)) errores.push("Vel. Max.");
+    if (!validarNumero(v3, 1, 99999)) errores.push("Vel. Max.");
 
 
     if(tipo === "Aereo") {
         // v4 es Alt. Max.
-        if (!validarNumero(v4, 1, 9999)) errores.push("Alt. Max.");
+        if (!validarNumero(v4, 1, 99999)) errores.push("Alt. Max.");
 
         // v5 es Autonomia
-        if (!validarNumero(v5, 1, 9999)) errores.push("Autonomia");
+        if (!validarNumero(v5, 1, 99999)) errores.push("Autonomia");
     } else {
         // v7 es Cant. Pue.
         if (!validarNumero(v6, 0, 12)) errores.push("Cant. Pue.");
