@@ -322,7 +322,7 @@ contenedorTabla.addEventListener("click", e => {
 
         document.querySelectorAll("th.columnaOrdenada").forEach(e => e.classList.remove("columnaOrdenada"));
 
-        ordenarDatos("id");
+        // ordenarDatos("id");
         ordenarDatos(columna);
         actualizarTablaFiltrada($divTablaContenedor, $selectFiltro.value, getColumnasOcultas(), e.target);
     }
@@ -338,12 +338,8 @@ function ordenarDatos(columna) {
         case "cantPue":
         case "cantRue":
             vehiculos.sort((a, b) => {
-                return a[columna] - b[columna];
-            });
-            aereos.sort((a, b) => {
-                return a[columna] - b[columna];
-            });
-            terrestres.sort((a, b) => {
+                console.log(a[columna]);
+                console.log(b[columna]);
                 return a[columna] - b[columna];
             });
             break;
