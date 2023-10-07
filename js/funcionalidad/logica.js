@@ -337,8 +337,6 @@ function ordenarDatos(columna) {
         case "cantPue":
         case "cantRue":
             vehiculos.sort((a, b) => {
-                console.log(a[columna]);
-                console.log(b[columna]);
                 return a[columna] - b[columna];
             });
             break;
