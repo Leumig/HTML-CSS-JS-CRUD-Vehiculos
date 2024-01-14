@@ -1,7 +1,7 @@
 # CRUD Vehículos
 ## Página Web - HTML, CSS y JavaScript
 
-Este repositorio contiene un proyecto que corresponde al Primer Parcial de la materia Laboratorio I, perteneciente a la carrera Tecnicatura Universitaria en Programación.
+Este repositorio contiene un proyecto que corresponde al Primer Parcial de la materia Laboratorio III, perteneciente a la carrera Tecnicatura Universitaria en Programación.
 Utilizo HTML, CSS y JavaScript. Todo hecho en el IDE Visual Studio Code.
 
 ### Detalles de la aplicación
