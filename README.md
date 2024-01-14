@@ -12,7 +12,7 @@ Al entrar a la página podemos ver un formulario para filtrar los datos que se v
 
 Al hacer clic en 'AGREGAR', se cambia al formulario del Alta. Obviamente sirve para agregar vehículos a la lista, con el tipo y los datos que el usuario quiera.
 
-Para realizar la modificación o eliminación de un vehículo, solo basta con hacer doble clic en la fila del vehículo que se quiera afectar. Al hacerlo, automáticamente se va a desplegar el otro formulario mostrando los datos del vehículo solicitado. Aparecerá obviamente la opción de Modificar para confirmar los cambios, o el de Eliminar par hacer la baja.
+Para realizar la modificación o eliminación de un vehículo, solo basta con hacer doble clic en la fila del vehículo que se quiera afectar. Al hacerlo, automáticamente se va a desplegar el otro formulario mostrando los datos del vehículo solicitado. Aparecerá la opción de Modificar para confirmar los cambios, o el de Eliminar par hacer la baja.
 
 > [!NOTE]
 > Universidad Tecnológica Nacional, 2023.
